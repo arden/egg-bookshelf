@@ -1,6 +1,6 @@
 {
   "name": "egg-bookshelf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "eggjs's bookshelf plugin.",
   "eggPlugin": {
     "name": "bookshelf"
@@ -52,12 +52,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-bookshelf.git"
+    "url": "git+https://github.com/arden/egg-bookshelf.git"
   },
   "bugs": {
-    "url": "https://github.com/eggjs/egg/issues"
+    "url": "https://github.com/arden/egg-bookshelf"
   },
-  "homepage": "https://github.com/eggjs/egg-bookshelf#readme",
+  "homepage": "https://github.com/arden/egg-bookshelf#readme",
   "author": "arden",
   "license": "MIT"
 }
