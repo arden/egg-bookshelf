@@ -1,0 +1,63 @@
+{
+  "name": "egg-bookshelf",
+  "version": "1.0.0",
+  "description": "eggjs's bookshelf plugin.",
+  "eggPlugin": {
+    "name": "bookshelf"
+  },
+  "keywords": [
+    "egg",
+    "eggPlugin",
+    "egg-plugin"
+  ],
+  "dependencies": {
+    "bookshelf": "^0.10.3",
+    "chalk": "^1.1.3",
+    "knex": "^0.12.9",
+    "mysql": "^2.13.0",
+    "mysql2": "^1.2.0"
+  },
+  "devDependencies": {
+    "autod": "^2.7.1",
+    "egg": "^1.0.0",
+    "egg-bin": "^3.1.0",
+    "egg-ci": "^1.5.0",
+    "egg-mock": "^3.2.0",
+    "eslint": "^3.18.0",
+    "eslint-config-egg": "^3.2.0",
+    "supertest": "^3.0.0",
+    "webstorm-disable-index": "^1.1.2"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "files": [
+    "index.js",
+    "app.js",
+    "agent.js",
+    "config",
+    "app",
+    "lib"
+  ],
+  "ci": {
+    "version": "6, 7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eggjs/egg-bookshelf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eggjs/egg/issues"
+  },
+  "homepage": "https://github.com/eggjs/egg-bookshelf#readme",
+  "author": "arden",
+  "license": "MIT"
+}
