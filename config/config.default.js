@@ -6,17 +6,23 @@
  * @property {String} SOME_KEY - some description
  */
 exports.bookshelf = {
-  client: 'mysql',
-  connection: {
-    host: 'localhost',
-    user: 'root',
-    password: '123456',
-    database: 'test',
-    charset: 'utf8mb4',
+  knex: {
+    client: 'mysql',
+    connection: {
+      host: 'localhost',
+      user: 'root',
+      password: '123456',
+      database: 'test',
+      charset: 'utf8mb4',
+    },
+    pool: {
+      min: 5,
+      max: 10,
+    },
+    debug: false,
   },
-  pool: {
-    min: 5,
-    max: 10,
+  egg: {
+    modelDir: 'app/model', // specify model dir path
+    modelAccessName: 'model', // custom model access path, default `app.model`
   },
-  debug: false,
 };
