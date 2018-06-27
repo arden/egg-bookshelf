@@ -59,6 +59,33 @@ exports.bookshelf = {
 尽可能描述详细。
 - How: 描述这个插件是怎样使用的，具体的示例代码，甚至提供一个完整的示例，并给出链接。
 
+## 事务
+knex 支持自动和手动提交
+
+### 手动提交
+
+```js
+const trx = yield app.knex.transaction();
+try {
+  yield trx.insert(row1).into('table');
+  yield trx('table').update(row2);
+  yield trx.commit()
+} catch (e) {
+  yield trx.rollback();
+  throw e;
+}
+```
+
+### 自动提交
+
+```js
+const result = yield app.knex.transaction(function* transacting (trx) {
+  yield trx(table).insert(row1);
+  yield trx(table).update(row2).where(condition);
+  return { success: true };
+})
+```
+
 ## 详细配置
 
 请到 [config/config.default.js](config/config.default.js) 查看详细配置项说明。

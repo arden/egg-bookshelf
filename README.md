@@ -40,6 +40,34 @@ exports.bookshelf = {
 };
 ```
 
+### Transaction
+
+`egg-knex` support manual/auto commit.
+
+#### Manual commit
+
+```js
+const trx = yield app.knex.transaction();
+try {
+  yield trx.insert(row1).into('table');
+  yield trx('table').update(row2);
+  yield trx.commit()
+} catch (e) {
+  yield trx.rollback();
+  throw e;
+}
+```
+
+#### Auto commit
+
+```js
+const result = yield app.knex.transaction(function* transacting (trx) {
+  yield trx(table).insert(row1);
+  yield trx(table).update(row2).where(condition);
+  return { success: true };
+});
+```
+
 ## Configuration
 
 ```js

@@ -1,6 +1,6 @@
 {
   "name": "egg-bookshelf",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "eggjs's bookshelf plugin.",
   "eggPlugin": {
     "name": "bookshelf"
